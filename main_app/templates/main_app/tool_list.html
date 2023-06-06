@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Tool List</h1>
+
+{% for tool in tool_list %}
+  <a href="{% url 'tools_detail' tool.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ tool.name }}</span>
+            <p>Cost: {{ tool.cost }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
