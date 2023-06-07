@@ -1,6 +1,7 @@
-from json import tool
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Tool(models.Model):
@@ -20,6 +21,8 @@ class Recipe(models.Model):
   # Create a M:M relationship with Tool
   # tools is the Related Manager
   tools = models.ManyToManyField(Tool)
+  user = models.ForeignKey(User,
+  on_delete=models.CASCADE)
 
   # Changing this instance method
   # does not impact the database, therefore

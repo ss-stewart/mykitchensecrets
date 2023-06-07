@@ -14,5 +14,10 @@ footer.page-footer {
     padding-top: 0;
     text-align: right;
 }
+
+.login-form label,
+.login-form input[type="submit"] {
+  color: white; 
+}
   
   
