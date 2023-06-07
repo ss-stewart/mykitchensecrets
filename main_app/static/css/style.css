@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: black;
+    background-color: pink;
     color: goldenrod;
 }
   
@@ -15,9 +15,5 @@ footer.page-footer {
     text-align: right;
 }
 
-.login-form label,
-.login-form input[type="submit"] {
-  color: white; 
-}
   
   
