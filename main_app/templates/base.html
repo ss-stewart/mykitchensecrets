@@ -32,10 +32,29 @@
             <li><a href="{% url 'logout' %}" class=" black-text ">Log Out</a></li>
           {% else %}
             <li><a href="{% url 'login' %}" class=" black-text ">Log In</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
           {% endif %}
         </ul>
       </div>
-      </nav>
+    </nav>
+
+    <ul class="sidenav" id="mobile">
+      {% if user.is_authenticated %}
+      <li>Hello, {{user}}</li>
+      <li><a href="{% url 'tools_create' %}" class=" black-text ">Add a Kitchen Tool</a></li>
+      <li><a href="{% url 'tools_index' %}" class=" black-text ">View All Kitchen Tools</a></li>
+      <li><a href="{% url 'recipes_create' %}" class=" black-text ">Add a Recipe</a></li>
+      <li><a href="{% url 'index' %}" class=" black-text ">View All My Recipes</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'logout' %}">Log Out&nbsp;&nbsp;</a></li>
+      {% else %}
+      <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      <li><a href="{% url 'login' %}">Log In&nbsp;&nbsp;</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      {% endif %}
+    
+    </ul>
+
   </header>
   <main class="container">
     {% block content %}
