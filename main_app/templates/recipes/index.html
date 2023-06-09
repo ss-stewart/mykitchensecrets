@@ -5,10 +5,10 @@
 
 {% for recipe in recipes %}
   <a href="{% url 'detail' recipe.id %}">
-    <div class="card">
-      <div class="card-content">
+    <div class="card black">
+      <div class="card-content yellow-text text-darken-2">
         <span class="card-title">{{ recipe.title }}</span>
-        <p>Ingredients: {{ recipe.ingredient }}</p>
+        <p>Ingredients: {{ recipe.ingredient|linebreaks }}</p>
         <p>Directions: {{ recipe.direction|linebreaks }}</p>
       </div>
     </div>

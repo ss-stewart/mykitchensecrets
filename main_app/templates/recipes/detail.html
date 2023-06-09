@@ -8,8 +8,10 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ recipe.title }}</span>
-        <p>Ingredients: {{ recipe.ingredients }}</p>
-        <p>Directions: {{ recipe.directions|linebreaks }}</p>
+        <p class="recipe-display">Ingredients:</p> 
+        <p>{{ recipe.ingredients|linebreaks }}</p>
+        <p class="recipe-display">Directions:</p>
+        <p>{{ recipe.directions|linebreaks }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'recipes_update' recipe.id %}">Edit</a>
@@ -28,11 +30,11 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              A {{ tool.cost }} {{ tool.name }}
+              A ${{ tool.cost }} {{ tool.name }}
             </span>
           </div>
           <div class="card-action">
-            <form action="{% url 'unassoc_tool' recipe.id recipe.id %}" method="POST">
+            <form action="{% url 'unassoc_tool' recipe.id tool.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn">Remove</button>
             </form>
@@ -51,7 +53,7 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              A {{ tool.cost }} {{ tool.name }}
+              A ${{ tool.cost }} {{ tool.name }}
             </span>
           </div>
           <div class="card-action">

@@ -8,13 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Kitchen Secrets</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
 </head>
 <body> 
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper yellow darken-2" >
         <ul>
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;
             <img src="../static/assets/logo.png">
@@ -22,15 +23,15 @@
           </li>
         </ul>
         <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'about' %}" class=" black-text ">About</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'tools_create' %}">Add a Kitchen Tool</a></li>
-            <li><a href="{% url 'tools_index' %}">View All Kitchen Tools</a></li>
-            <li><a href="{% url 'recipes_create' %}">Add a Recipe</a></li>
-            <li><a href="{% url 'index' %}">View All My Recipes</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a href="{% url 'tools_create' %}" class=" black-text ">Add a Kitchen Tool</a></li>
+            <li><a href="{% url 'tools_index' %}" class=" black-text ">View All Kitchen Tools</a></li>
+            <li><a href="{% url 'recipes_create' %}" class=" black-text ">Add a Recipe</a></li>
+            <li><a href="{% url 'index' %}" class=" black-text ">View All My Recipes</a></li>
+            <li><a href="{% url 'logout' %}" class=" black-text ">Log Out</a></li>
           {% else %}
-            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'login' %}" class=" black-text ">Log In</a></li>
           {% endif %}
         </ul>
       </div>
@@ -40,7 +41,7 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
+  <footer class="page-footer yellow darken-2">
     <div class="right">All Rights Reserved, &copy; 2023 My Kitchen Secrets &nbsp;</div>
   </footer>
 </body>

@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: pink;
+    background-color: black;
     color: goldenrod;
+    font-family: 'Economica', sans-serif;
 }
   
 main {
     flex: 1 0 auto;
 }
-  
+
+.recipe-display {
+    font-size: 50px;
+}
+
+.recipe-list-display {
+    font-size: 40px;
+}
+
 footer.page-footer {
     padding-top: 0;
     text-align: right;

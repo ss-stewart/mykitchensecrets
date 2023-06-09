@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Tool List</h1>
+<h1>Tools List</h1>
 
 {% for tool in tool_list %}
   <a href="{% url 'tools_detail' tool.id %}">
-    <div class="card">
-        <div class="card-content">
+    <div class="card black">
+        <div class="card-content yellow-text text-darken-2">
             <span class="card-title">{{ tool.name }}</span>
-            <p>Cost: {{ tool.cost }}</p>
+            <p>Cost: ${{ tool.cost }}</p>
         </div>
     </div>
   </a>
